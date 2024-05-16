@@ -1,6 +1,6 @@
 # STRECKEISEN-JS
 
-JavaScript library to classify igneous rocks based on mineralogical composition
+JavaScript library to classify igneous rocks based on mineralogical composition.
 
 ## Installation:
 
