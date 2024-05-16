@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+.github
+.husky
+.gitignore
+.npmrc
+jest.config.js
+package-lock.json

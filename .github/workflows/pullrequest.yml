@@ -1,0 +1,19 @@
+name: Pull Request CI/CD pipeline
+
+on:
+  pull_request:
+
+jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install
+        uses: ./.github/composite-actions/install
+
+  checks:
+    name: Checks
+    uses: './.github/workflows/checks.yml'
+    needs: install

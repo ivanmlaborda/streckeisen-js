@@ -1,0 +1,63 @@
+{
+  "name": "streckeisen-js",
+  "version": "1.0.0",
+  "description": "JavaScript library to classify igneous rocks based on mineralogical composition",
+  "main": "lib/index.js",
+  "scripts": {
+    "co": "cz",
+    "dev": "NODE_ENV=development PORT=3000 node --watch src/index.js ",
+    "lib": "esbuild ./src/index.js --bundle --outfile=./lib/index.js --format=esm",
+    "lint": "standard --env jest --fix",
+    "prepare": "npm run lib && husky",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:lib": "TEST_ENV=lib jest"
+  },
+  "type": "module",
+  "author": "Ivan M Laborda",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ivanmlaborda/streckeisen-js.git"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/commit-analyzer": "12.0.0",
+    "@semantic-release/git": "10.0.1",
+    "commitizen": "4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "esbuild": "0.20.2",
+    "esbuild-jest": "0.5.0",
+    "husky": "9.0.11",
+    "jest": "29.7.0",
+    "semantic-release": "23.0.8",
+    "standard": "17.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "env": {
+      "jest": true
+    },
+    "ignores": [
+      "lib"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
+}
